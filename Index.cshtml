@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "注册";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@section css{
+
+    <link href="@Url.Content("~/Content/page/regist.css")" rel="stylesheet" type="text/css" />
+
+}
+
+
+<!-- doc start -->
+<div id="g-doc">
+    <!-- logo start -->
+    <div class="g-hd clearfix">
+        <div class="m-logo">
+            <h1 class="logo">
+                <a href="#"><img src="../../Content/images/logo.png" /></a>
+            </h1>
+            <a href><img src="../../Content/images/logo-1.png" /></a>
+        </div>
+        <p class="m-tt">欢迎注册</p>
+    </div>
+    <!-- /logo start -->
+    <!-- body start -->
+    <div class="g-bd g-bd-reg clearfix">
+        <div class="m-ad">
+            <img src="../../Content/images/lodingBG.png" />
+        </div>
+        <!-- regist start -->
+        <div class="m-log m-reg" id="commentForm">
+
+            <p class="m-tt">免费注册</p>
+
+            <p class="z-err">
+                <span class="none">
+                    <span class="u-err" id="tit"></span>
+
+                    <em class="err"></em>
+                </span>
+            </p>
+
+            <p class="m-ipt">
+                <input class="u-ipt" type="text" name="useName" placeholder="请输入手机号" gvalid="require('手机号')|phoneNum()|ajaxCheckName('./reg/HasRegedit')" />
+                <em class="abslu-1"></em>
+            </p>
+            <p class="m-ipt-wrap">
+                <input class="m-verify-box u-mes-box" type="text" placeholder="请输入短信验证码" gvalid="require('短信验证码')" />
+                <span class="u-message" >获取短信验证码</span>
+            </p>
+            <p class="m-ipt">
+                <input class="u-ipt" type="password" id="pswOne" name="password" placeholder="请输入密码" gvalid="require('密码')|len('密码长度',6,15)" />
+                <em class="abslu-2"></em>
+            </p>
+            <p class="m-ipt">
+                <input class="u-ipt" type="password" id="pswTwo" name="password" placeholder="请再次输入密码" gvalid="require('再次输入密码')|len('再次输入密码',6,15)|same('pswOne')" />
+                <em class="abslu-2"></em>
+            </p>
+            <p class="m-tips">
+                <input class="check" type="checkbox" name=""  />
+                <span class="check-2">我已阅读并同意《<a href="#">爱家网注册协议</a>》</span>
+            </p>
+            <button class="u-btn" onclick="scrop_reg.onReg()">注&nbsp&nbsp册</button>
+
+            <p class="f-tac">已有帐号？马上<a href="#">登录</a></p>
+
+
+
+        </div>
+        <!-- /regist end -->
+    </div>
+    <!-- /body end -->
+</div>
+<!-- /doc start -->
+@section script{
+    @*<script src="~/Scripts/String.js"></script>
+        <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+        <script src="~/Scripts/MyValid.js"></script>*@
+    <script src="~/Scripts/require.js" data-main="../../Scripts/main.js" data-js="page/reg"></script>
+
+}
+
+
+
+
